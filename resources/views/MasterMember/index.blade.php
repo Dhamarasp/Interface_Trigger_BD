@@ -24,7 +24,7 @@
                             <td>{{ $user->username }}</td>
                             <td>{{ $user->sisa_jam }} Jam</td>
                             <td>
-                                @if($user->status == 1)
+                                @if($user->status)
                                     <div class="badge badge-success">Online</div>
                                     @else
                                     <div class="badge badge-danger">Offline</div>

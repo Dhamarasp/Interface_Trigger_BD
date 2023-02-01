@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Booking;
+use App\Models\User;
+use App\Models\Komputer;
 use Illuminate\Http\Request;
 
 class DashboardController extends Controller
@@ -13,7 +16,10 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        return view('Dashboard.index');
+        $username = User::all()->count();
+        $unit = Komputer::all()->count();
+        $booking = Booking::all()->count();
+        return view('Dashboard.index', compact('username', 'unit', 'booking'));
     }
 
     /**
